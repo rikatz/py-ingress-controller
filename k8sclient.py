@@ -1,7 +1,12 @@
 from kubernetes import client, config, watch
+import os
 
 def init():
-    config.load_kube_config()
+    if os.path.isfile("/var/run/secrets/kubernetes.io/serviceaccount/token"):
+        config.load_incluster_config()
+    else:
+        config.load_kube_config()
+    
     global networkingv1
     global corev1
     global w
