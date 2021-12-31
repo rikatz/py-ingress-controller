@@ -7,3 +7,7 @@ We don't:
 * Deal with multiple hosts per ingress object
 * Deal fine with errors (yet!)
 * Deal with non numeric services
+
+Tests
+
+Just run `pytest`.
