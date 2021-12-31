@@ -15,6 +15,7 @@ def parse_path(path, namespace, name):
     if path.path_type == "Exact":
         path_str = path.path
     elif path.path_type == "Prefix":
+        # TODO: This is wrong and not working :)
         path_str = path.path + "*"
     else:
         logging.warning("ingress %s/%s contém path invalido", namespace, name)
